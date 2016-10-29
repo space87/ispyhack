@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 # Angular WebPack Starter
@@ -61,3 +62,6 @@ copy of bundle.js that satisfies get requests when running the server.
 Copyright 2014 Digital Advisors, LLC
 
 Licensed under the Apache License, Version 2.0: http://www.apache.org/licenses/LICENSE-2.0
+=======
+# ispyhack
+>>>>>>> 180b1a438daaf5043fbd8ebddeb8e405bf19ae38
