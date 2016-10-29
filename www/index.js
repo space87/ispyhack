@@ -9,7 +9,7 @@
         'ngNewRouter'
     ]);
 
-    require ('./css/app.less');
+    require ('./css/app.scss');
 
     require('./components/nav/nav.js')(ngModule);
     require('./components/home/home.js')(ngModule);

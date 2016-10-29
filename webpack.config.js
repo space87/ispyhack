@@ -12,7 +12,7 @@ module.exports = {
             {test: /\.html$/, loader: 'raw', exclude: /node_modules/},
             {test: /\.css$/, loader: 'style!css', exclude: /node_modules/},
             {test: /\.styl$/, loader: 'style!css!stylus', exclude: /node_modules/},
-            {test: /\.less$/, loader: 'style!css!less', exclude: /node_modules/},
+            {test: /\.scss$/, loader: 'style!css!sass', exclude: /node_modules/},
 
             // **IMPORTANT** This is needed so that each bootstrap js file required by
             // bootstrap-webpack has access to the jQuery object

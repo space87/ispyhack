@@ -1,7 +1,7 @@
 export default ngModule => {
 
 
-    require('./navbar.less');
+    require('./navbar.scss');
 
     ngModule.controller('NavController',[function(){
 
