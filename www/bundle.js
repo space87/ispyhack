@@ -34,7 +34,7 @@
 /******/ 	__webpack_require__.c = installedModules;
 
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/js/";
+/******/ 	__webpack_require__.p = "/Users/jasonstaerck/Documents/hackmanchester/angular-webpack-starter/www";
 
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
@@ -54801,7 +54801,8 @@
 	  // }]);
 
 	  ngModule.config(function ($stateProvider) {
-	    console.log('o');
+	    console.log('oss');
+	    console.log('jsjsjs');
 	    var home = {
 	      name: 'hello',
 	      url: '/',
@@ -54829,6 +54830,12 @@
 
 	    };
 
+	    var me = {
+	      name: 'me',
+	      url: '/me',
+	      template: '<h3>hos</h3>'
+	    };
+
 	    // var register = {
 	    //   name: 'register',
 	    //   url: '/register',
@@ -54840,6 +54847,7 @@
 	    $stateProvider.state(aboutState);
 	    $stateProvider.state(login);
 	    $stateProvider.state(register);
+	    $stateProvider.state(me);
 	  });
 	};
 

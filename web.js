@@ -35,12 +35,6 @@ app.use(stormpath.init(app, {
     spa: {
       enabled: true,
       view: path.join(__dirname, 'www', 'index.html')
-    },
-    me: {
-      expand: {
-        customData: true,
-        groups: true
-      }
     }
   }
 }));

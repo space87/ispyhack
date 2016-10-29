@@ -43,6 +43,12 @@ export default ngModule => {
 
     }
 
+    var me = {
+      name: 'me',
+      url: '/me',
+      template: '<h3>hos</h3>'
+    }
+
     // var register = {
     //   name: 'register',
     //   url: '/register',
@@ -54,6 +60,7 @@ export default ngModule => {
     $stateProvider.state(aboutState);
     $stateProvider.state(login);
     $stateProvider.state(register);
+    $stateProvider.state(me);
 
     })
 
