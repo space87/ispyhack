@@ -1,19 +1,83 @@
-.card-container.card {
-  max-width: 350px;
-  padding: 40px 40px;
+.fullImage {
+  background: url(./images/bg.jpg);
+width: 100%;
+height: 100%;
+position: absolute;
+z-index: -1;
+background-size: cover;
+}
+
+.logo {
+  width:100px;
+  margin:30px auto;
+  display:block;
 }
 
 .card {
-    background-color: #F7F7F7;
-    /* just in case there no content*/
-    padding: 20px 25px 30px;
-    margin: 0 auto 25px;
-    margin-top: 50px;
-    /* shadows and rounded borders */
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
-    border-radius: 2px;
-    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    background:rgba(0,0,0,0.7);
+    padding: 0 30px 30px 30px;
+    max-width: 500px;
+    margin: 30px auto;
+
+   color:#fff;
+
+   h3 {
+      font-family:arial;
+      font-size: 30px;
+      padding:15px 0;
+   }
+
+   form {
+
+     .form-group {
+       > div {
+         width:100%;
+
+         input[type="text"], input[type="password"] {
+           width:60%;
+           margin:0 auto;
+           border:none;
+         }
+       }
+
+       .col-sm-offset-4 {
+         margin:0;
+       }
+     }
+
+     button {
+       width:50%;
+       margin:0 auto;
+       display:block;
+       background: #F2822F;
+       color:#fff;
+
+       &:hover {
+         background: darken(#F2822F,10%);
+       }
+     }
+
+     a {
+       float: none!important;
+text-align: center;
+display: block;
+margin-top: 20px;
+color:#fff;
+     }
+
+     label {
+       display:none;
+
+
+     }
+   }
+}
+
+.intro-text {
+  border-bottom:#fff solid 2px;
+  padding-bottom:15px;
+  max-width: 500px;
+  margin:20px auto;
+  color:#fff;
+  font-size:11px;
 }

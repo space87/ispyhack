@@ -11,7 +11,7 @@
   "author": "Justin Winthers",
   "license": "ISC",
   "dependencies": {
-    "angular": "^1.4.3",
+    "angular": "1.5.0",
     "angular-new-router": "^0.5.3",
     "angular-route": "^1.4.3",
     "angular-ui-router": "^0.3.1",
@@ -23,8 +23,9 @@
     "jquery": "^2.1.4",
     "morgan": "^1.6.1",
     "stormpath-sdk-angularjs": "^1.1.1",
+    "webpack": "^1.10.5",
     "webpack-dev-middleware": "^1.8.4",
-    "webpack": "^1.10.5"
+    "webpack-hot-middleware": "^2.13.1"
   },
   "devDependencies": {
     "babel-core": "^5.8.14",

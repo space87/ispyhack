@@ -1,9 +1,13 @@
+import caseList from './components/caseList/caseList.js';
 (function(){
 
     const bootstrap = require('bootstrap-webpack');
     const angular = require('angular');
     const router = require('angular-new-router');
     const routers = require('angular-ui-router');
+    // var caseList = require('./components/caseList/caseList.js');
+
+
 
     const stormpath = require('stormpath-sdk-angularjs');
 
@@ -15,15 +19,14 @@
 
     ngModule.run(function($stormpath) {
       $stormpath.uiRouter({
-        loginState: 'about',
+        loginState: 'home',
         defaultPostLoginState: 'about'
       });
     });
 
-    ngModule.config(function($urlRouterProvider, $locationProvider) {
-      $locationProvider.html5Mode(true);
-      $urlRouterProvider.otherwise('/');
-    })
+    ngModule.controller('cases', caseList)
+
+
 
 
     require ('./css/app.scss');
@@ -32,6 +35,8 @@
     require('./components/home/home.js')(ngModule);
     require('./components/component1/component1.js')(ngModule);
     require('./components/component2/component2.js')(ngModule);
+    require('./components/upload/upload.js')(ngModule);
+
     require('./directives')(ngModule);
     require('./routes')(ngModule);
 

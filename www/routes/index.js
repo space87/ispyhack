@@ -13,13 +13,14 @@ export default ngModule => {
     //
     // }]);
 
-    ngModule.config(function($stateProvider) {
-        console.log('oss')
-        console.log('jsjsjs')
+    ngModule.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
+
+
     var home = {
-      name: 'hello',
+      name: 'home',
       url: '/',
-      templateUrl: '../components/home/home.html'
+      templateUrl: '../components/home/home.html',
+      controller:'HomeController'
 
     }
 
@@ -33,7 +34,7 @@ export default ngModule => {
       name: 'login',
       url: '/login',
       templateUrl: '../components/home/home.html',
-      controller:'../components/home/home.js'
+      controller:'HomeController'
     }
 
     var register = {
@@ -43,10 +44,21 @@ export default ngModule => {
 
     }
 
-    var me = {
-      name: 'me',
-      url: '/me',
-      template: '<h3>hos</h3>'
+    var upload = {
+      name: 'upload',
+      url: '/upload',
+      templateUrl:'../components/upload/upload.html',
+      controller: 'UploadController',
+      controllerAs: 'model'
+
+    }
+
+    var cases = {
+      name: 'cases',
+      url: '/cases',
+      templateUrl:'../components/caseList/caseList.html',
+      controller: 'cases',
+      controllerAs: 'model'
     }
 
     // var register = {
@@ -60,7 +72,11 @@ export default ngModule => {
     $stateProvider.state(aboutState);
     $stateProvider.state(login);
     $stateProvider.state(register);
-    $stateProvider.state(me);
+    $stateProvider.state(upload);
+    $stateProvider.state(cases);
+
+    // $locationProvider.html5Mode(true);
+    $urlRouterProvider.otherwise('/');
 
     })
 

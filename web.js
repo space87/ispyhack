@@ -1,14 +1,19 @@
 var express = require('express');
 var webpack = require('webpack');
 var config = require('./webpack.config');
+var webpackHotMiddleware = require('webpack-hot-middleware');
 var app = express();
 
-var compiler = webpack(config);
+// var compiler = webpack(config);
 
-app.use(require('webpack-dev-middleware')(compiler, {
-  noInfo: true,
-  publicPath: config.output.publicPath
-}));
+// app.use(require('webpack-dev-middleware')(compiler, {
+//   stats: {colors:true},
+//   publicPath: config.output.publicPath
+// }));
+
+// app.use(webpackHotMiddleware(compiler, {
+//     log: console.log
+// }))
 
 var logger = require('morgan');
 var port = process.env.PORT || 5000;
