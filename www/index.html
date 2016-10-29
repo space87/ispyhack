@@ -14,18 +14,26 @@
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 
+          <base href="/">
+
     </head>
-    <body ng-app="app" ng-controller="AppController as app">
+    <body ng-app="app" >
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <div ng-viewport="nav"></div>
-        <div ng-viewport="main"></div>
+
+          <a ui-sref="about">About</a>
+          <a ui-sref="register">Register</a>
+        <!-- <div ng-viewport="nav"></div> -->
+        <!-- <div ng-viewport="main"></div> -->
+        <ui-view></ui-view>
+
+
 
 
         <!--start auto refresh of webpack server TODO:REMOVE IN PRODUCTION-->
-        <script src="http://localhost:8080/webpack-dev-server.js"></script>
+        <!-- <script src="http://localhost:8080/webpack-dev-server.js"></script> -->
 
         <!--webpack bundle-->
         <script src="bundle.js"></script>

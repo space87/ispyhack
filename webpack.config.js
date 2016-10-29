@@ -3,7 +3,8 @@ module.exports = {
     entry: './index.js',
     output: {
         path: __dirname + '/www',
-        filename: './bundle.js'
+        filename: './bundle.js',
+        publicPath: __dirname + '/www'
     },
 
     module: {
@@ -11,7 +12,6 @@ module.exports = {
             {test: /\.js$/, loader: 'babel', exclude: /node_modules/},
             {test: /\.html$/, loader: 'raw', exclude: /node_modules/},
             {test: /\.css$/, loader: 'style!css', exclude: /node_modules/},
-            {test: /\.styl$/, loader: 'style!css!stylus', exclude: /node_modules/},
             {test: /\.scss$/, loader: 'style!css!sass', exclude: /node_modules/},
 
             // **IMPORTANT** This is needed so that each bootstrap js file required by
@@ -26,7 +26,7 @@ module.exports = {
             { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,    loader: "file" },
             { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,    loader: "url?limit=10000&mimetype=image/svg+xml" },
 
-            {test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'}
+            {test: /\.(png|jpg|jpeg|gif|svg)$/, loader: 'url-loader?limit=8192'}
 
         ]
     }

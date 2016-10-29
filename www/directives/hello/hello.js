@@ -1,7 +1,7 @@
 export default ngModule => {
     ngModule.directive('hello', () => {
 
-        require('./hello.styl');
+        require('./hello.scss');
 
         return {
             restrict: 'E',

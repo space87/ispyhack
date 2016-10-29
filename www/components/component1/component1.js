@@ -1,6 +1,6 @@
 export default ngModule => {
 
-    require ('./component1.styl');
+    require ('./component1.scss');
 
     ngModule.controller('Component1Controller',[function(){
 
