@@ -16,19 +16,19 @@ export default ngModule => {
     ngModule.config(function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
 
 
-    // var home = {
-    //   name: 'home',
-    //   url: '/',
-    //   templateUrl: '../components/home/home.html',
-    //   controller:'HomeController'
-    //
-    // }
+    var home = {
+      name: 'home',
+      url: '/',
+      templateUrl: '../components/home/home.html',
+      controller:'HomeController'
+
+    }
 
 
 
     var login = {
       name: 'login',
-      url: '/',
+      url: '/login',
       templateUrl: '../components/login/login.html',
       controller:'LoginController'
     }
@@ -39,20 +39,28 @@ export default ngModule => {
       template: '<div sp-registration-form post-login-state="main"></div>',
     }
 
-    var upload = {
-      name: 'upload',
-      url: '/upload',
-      templateUrl:'../components/upload/upload.html',
-      controller: 'UploadController',
-      controllerAs: 'model'
-    }
+
 
     var cases = {
       name: 'cases',
       url: '/cases',
       templateUrl:'../components/caseList/caseList.html',
       controller: 'cases',
-      controllerAs: 'model'
+      controllerAs: 'model',
+      sp: {
+    authenticate: true
+  }
+    }
+
+    var cases2 = {
+      name: 'cases2',
+      url: '/cases/',
+      templateUrl:'../components/caseList/caseList.html',
+      controller: 'cases',
+      controllerAs: 'model',
+      sp: {
+    authenticate: true
+  }
     }
 
     var detail = {
@@ -60,7 +68,10 @@ export default ngModule => {
       url: '/cases/:id',
       templateUrl:'../components/caseDetails/caseDetails.html',
       controller: 'details',
-      controllerAs: 'model'
+      controllerAs: 'model',
+      sp: {
+    authenticate: true
+  }
     }
 
     // var register = {
@@ -70,12 +81,13 @@ export default ngModule => {
     //   controller:'<h1>register</h1>'
     // }
 
-    // $stateProvider.state(home);
+    $stateProvider.state(home);
 
     $stateProvider.state(login);
     $stateProvider.state(register);
-    $stateProvider.state(upload);
+
     $stateProvider.state(cases);
+    $stateProvider.state(cases2);
     $stateProvider.state(detail);
 
     // $locationProvider.html5Mode(true);

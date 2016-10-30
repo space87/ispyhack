@@ -43,11 +43,11 @@
 
             <div class="box">
 
-              <div class="row" ng-show="model.detail.matchedImages[0].path">
+              <div class="row" ng-show="model.detail.images[0].path">
 
                 <div class="col-sm-12">
 
-                    <img src="{{model.detail.matchedImages[0].path}}.jpg"  alt="">
+                    <img class="mainImage" src="{{model.detail.images[0].path}}"  alt="">
 
 
                 </div>
@@ -175,6 +175,8 @@
           <div class="sightingInfo">
             <p class="timeSpotted text-center">Time Spotted: {{model.tempSighting.dateAdded | date : 'longDate'}}</p>
             <!-- <p>Confidence Score: {{model.tempSighting.confidence}}</p> -->
+
+            <img class="sightedImage" src="{{model.detail.matchedImages[model.tempSighting.number].path}}" />
           </div>
 
         </div>

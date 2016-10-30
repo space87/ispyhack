@@ -63,18 +63,10 @@
 	    var router = __webpack_require__(103);
 	    var routers = __webpack_require__(104);
 	    var ngmap = __webpack_require__(105);
-	    // var caseList = require('./components/caseList/caseList.js');
 
 	    var stormpath = __webpack_require__(106);
 
 	    var ngModule = angular.module('app', ['ngNewRouter', 'ui.router', 'stormpath', 'stormpath.templates', 'ngMap']);
-
-	    ngModule.run(function ($stormpath) {
-	        $stormpath.uiRouter({
-	            loginState: 'home',
-	            defaultPostLoginState: 'about'
-	        });
-	    });
 
 	    ngModule.controller('cases', _componentsCaseListCaseListJs2['default']);
 	    ngModule.controller('details', _componentsCaseDetailsCaseDetailsJs2['default']);
@@ -82,12 +74,18 @@
 	    __webpack_require__(109);
 
 	    __webpack_require__(112)(ngModule);
-	    __webpack_require__(115)(ngModule);
-	    __webpack_require__(119)(ngModule);
+	    __webpack_require__(116)(ngModule);
+
+	    __webpack_require__(120)(ngModule);
 
 	    __webpack_require__(123)(ngModule);
 
-	    __webpack_require__(126)(ngModule);
+	    ngModule.run(function ($stormpath) {
+	        $stormpath.uiRouter({
+	            loginState: 'login',
+	            defaultPostLoginState: 'cases'
+	        });
+	    });
 	})();
 
 /***/ },
@@ -757,7 +755,7 @@
 
 
 	// module
-	exports.push([module.id, ".personDetails h2 {\n  text-align: center;\n  font-size: 16px;\n  font-weight: bold;\n  margin-bottom: 30px; }\n\n.personDetails .miniInfo {\n  list-style: none; }\n  .personDetails .miniInfo li {\n    font-size: 13px;\n    display: inline-block;\n    margin-bottom: 20px;\n    width: 33.333%;\n    vertical-align: top; }\n    .personDetails .miniInfo li .title {\n      font-weight: bold;\n      text-transform: capitalize; }\n\n.personDetails .box {\n  background: #e3ddd9;\n  padding: 20px 15px; }\n\n.personDetails .box2 {\n  background: #e3ddd9; }\n  .personDetails .box2 ul {\n    list-style: none;\n    padding: 0;\n    margin: 0; }\n    .personDetails .box2 ul li {\n      display: block; }\n      .personDetails .box2 ul li .map {\n        height: 200px; }\n\n.timeSpotted {\n  font-size: 18px;\n  line-height: 1.4;\n  margin: 10px 0; }\n\n.sightingModal {\n  display: block !important;\n  transform: translate3d(0, -200%, 0);\n  transition: all .5s ease; }\n\n.photoModal {\n  transform: translate3d(0, -200%, 0);\n  transition: all .5s ease; }\n\n.alert-success {\n  display: none; }\n\n.liveSightings li:nth-child(odd) {\n  background: #ccc; }\n\n.liveSightings h4 {\n  display: inline-block;\n  padding: 20px; }\n\n.liveSightings button {\n  display: inline-block;\n  margin: 20px 20px 15px 0px;\n  float: right; }\n", ""]);
+	exports.push([module.id, ".personDetails h2 {\n  text-align: center;\n  font-size: 16px;\n  font-weight: bold;\n  margin-bottom: 30px; }\n\n.personDetails .miniInfo {\n  list-style: none; }\n  .personDetails .miniInfo li {\n    font-size: 13px;\n    display: inline-block;\n    margin-bottom: 20px;\n    width: 33.333%;\n    vertical-align: top; }\n    .personDetails .miniInfo li .title {\n      font-weight: bold;\n      text-transform: capitalize; }\n\n.personDetails .box {\n  background: #e3ddd9;\n  padding: 20px 15px; }\n\n.personDetails .box2 {\n  background: #e3ddd9; }\n  .personDetails .box2 ul {\n    list-style: none;\n    padding: 0;\n    margin: 0; }\n    .personDetails .box2 ul li {\n      display: block; }\n      .personDetails .box2 ul li .map {\n        height: 200px; }\n\n.timeSpotted {\n  font-size: 18px;\n  line-height: 1.4;\n  margin: 10px 0; }\n\n.sightingModal {\n  display: block !important;\n  transform: translate3d(0, -200%, 0);\n  transition: all .5s ease; }\n\n.photoModal {\n  transform: translate3d(0, -200%, 0);\n  transition: all .5s ease; }\n\n.alert-success {\n  display: none; }\n\n.liveSightings li:nth-child(odd) {\n  background: #ccc; }\n\n.liveSightings h4 {\n  display: inline-block;\n  padding: 20px; }\n\n.liveSightings button {\n  display: inline-block;\n  margin: 20px 20px 15px 0px;\n  float: right; }\n\n.mainImage {\n  border-radius: 50%;\n  width: 28%;\n  height: 150px;\n  display: block;\n  margin: 16px auto;\n  margin-bottom: 40px; }\n\n.sightedImage {\n  width: 80%;\n  margin: 0 auto;\n  display: block; }\n", ""]);
 
 	// exports
 
@@ -56764,7 +56762,9 @@
 
 	    __webpack_require__(113);
 
-	    ngModule.controller('NavController', [function () {}]);
+	    ngModule.controller('HomeController', [function () {
+	        this.name = 'Justin';
+	    }]);
 	};
 
 	module.exports = exports['default'];
@@ -56785,8 +56785,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./navbar.scss", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./navbar.scss");
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./home.scss", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./home.scss");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -56804,7 +56804,7 @@
 
 
 	// module
-	exports.push([module.id, "", ""]);
+	exports.push([module.id, ".fullImage {\n  background: url(" + __webpack_require__(115) + ");\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  z-index: -1;\n  background-size: cover; }\n\n.logo {\n  width: 100px;\n  margin: 30px auto;\n  display: block; }\n\n.card {\n  background: rgba(0, 0, 0, 0.7);\n  padding: 0 30px 30px 30px;\n  max-width: 500px;\n  margin: 30px auto;\n  color: #fff; }\n  .card h3 {\n    font-family: arial;\n    font-size: 30px;\n    padding: 15px 0; }\n  .card form .form-group > div {\n    width: 100%; }\n    .card form .form-group > div input[type=\"text\"], .card form .form-group > div input[type=\"password\"] {\n      width: 60%;\n      margin: 0 auto;\n      border: none; }\n  .card form .form-group .col-sm-offset-4 {\n    margin: 0; }\n  .card form button {\n    width: 50%;\n    margin: 0 auto;\n    display: block;\n    background: #F2822F;\n    color: #fff; }\n    .card form button:hover {\n      background: #e0670e; }\n  .card form a {\n    float: none !important;\n    text-align: center;\n    display: block;\n    margin-top: 20px;\n    color: #fff; }\n  .card form label {\n    display: none; }\n\n.intro-text {\n  border-bottom: #fff solid 2px;\n  padding-bottom: 15px;\n  max-width: 500px;\n  margin: 20px auto;\n  color: #fff;\n  font-size: 11px; }\n", ""]);
 
 	// exports
 
@@ -56813,73 +56813,12 @@
 /* 115 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-
-	Object.defineProperty(exports, '__esModule', {
-	    value: true
-	});
-
-	exports['default'] = function (ngModule) {
-
-	    __webpack_require__(116);
-
-	    ngModule.controller('HomeController', [function () {
-	        this.name = 'Justin';
-	    }]);
-	};
-
-	module.exports = exports['default'];
+	module.exports = __webpack_require__.p + "3459721de9601dc6399b1169fe82b5c3.jpg";
 
 /***/ },
 /* 116 */
 /***/ function(module, exports, __webpack_require__) {
 
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(117);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(74)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./home.scss", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./home.scss");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 117 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(73)();
-	// imports
-
-
-	// module
-	exports.push([module.id, ".fullImage {\n  background: url(" + __webpack_require__(118) + ");\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  z-index: -1;\n  background-size: cover; }\n\n.logo {\n  width: 100px;\n  margin: 30px auto;\n  display: block; }\n\n.card {\n  background: rgba(0, 0, 0, 0.7);\n  padding: 0 30px 30px 30px;\n  max-width: 500px;\n  margin: 30px auto;\n  color: #fff; }\n  .card h3 {\n    font-family: arial;\n    font-size: 30px;\n    padding: 15px 0; }\n  .card form .form-group > div {\n    width: 100%; }\n    .card form .form-group > div input[type=\"text\"], .card form .form-group > div input[type=\"password\"] {\n      width: 60%;\n      margin: 0 auto;\n      border: none; }\n  .card form .form-group .col-sm-offset-4 {\n    margin: 0; }\n  .card form button {\n    width: 50%;\n    margin: 0 auto;\n    display: block;\n    background: #F2822F;\n    color: #fff; }\n    .card form button:hover {\n      background: #e0670e; }\n  .card form a {\n    float: none !important;\n    text-align: center;\n    display: block;\n    margin-top: 20px;\n    color: #fff; }\n  .card form label {\n    display: none; }\n\n.intro-text {\n  border-bottom: #fff solid 2px;\n  padding-bottom: 15px;\n  max-width: 500px;\n  margin: 20px auto;\n  color: #fff;\n  font-size: 11px; }\n", ""]);
-
-	// exports
-
-
-/***/ },
-/* 118 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__.p + "3459721de9601dc6399b1169fe82b5c3.jpg";
-
-/***/ },
-/* 119 */
-/***/ function(module, exports, __webpack_require__) {
-
 	'use strict';
 
 	Object.defineProperty(exports, '__esModule', {
@@ -56888,7 +56827,7 @@
 
 	exports['default'] = function (ngModule) {
 
-	    __webpack_require__(120);
+	    __webpack_require__(117);
 
 	    ngModule.controller('LoginController', [function () {
 	        this.name = 'Justin';
@@ -56898,13 +56837,13 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 120 */
+/* 117 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(121);
+	var content = __webpack_require__(118);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(74)(content, {});
@@ -56924,7 +56863,7 @@
 	}
 
 /***/ },
-/* 121 */
+/* 118 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(73)();
@@ -56932,19 +56871,19 @@
 
 
 	// module
-	exports.push([module.id, ".fullImage {\n  background: url(" + __webpack_require__(122) + ");\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  z-index: -1;\n  background-size: cover; }\n\n.logo {\n  width: 100px;\n  margin: 30px auto;\n  display: block; }\n\n.card {\n  background: rgba(0, 0, 0, 0.7);\n  padding: 0 30px 30px 30px;\n  max-width: 500px;\n  margin: 30px auto;\n  color: #fff; }\n  .card h3 {\n    font-family: arial;\n    font-size: 30px;\n    padding: 15px 0; }\n  .card form .form-group > div {\n    width: 100%; }\n    .card form .form-group > div input[type=\"text\"], .card form .form-group > div input[type=\"password\"] {\n      width: 60%;\n      margin: 0 auto;\n      border: none; }\n  .card form .form-group .col-sm-offset-4 {\n    margin: 0; }\n  .card form button {\n    width: 50%;\n    margin: 0 auto;\n    display: block;\n    background: #F2822F;\n    color: #fff; }\n    .card form button:hover {\n      background: #e0670e; }\n  .card form a {\n    float: none !important;\n    text-align: center;\n    display: block;\n    margin-top: 20px;\n    color: #fff; }\n  .card form label {\n    display: none; }\n\n.intro-text {\n  border-bottom: #fff solid 2px;\n  padding-bottom: 15px;\n  max-width: 500px;\n  margin: 20px auto;\n  color: #fff;\n  font-size: 11px; }\n", ""]);
+	exports.push([module.id, ".fullImage {\n  background: url(" + __webpack_require__(119) + ");\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  z-index: -1;\n  background-size: cover; }\n\n.logo {\n  width: 100px;\n  margin: 30px auto;\n  display: block; }\n\n.card {\n  background: rgba(0, 0, 0, 0.7);\n  padding: 0 30px 30px 30px;\n  max-width: 500px;\n  margin: 30px auto;\n  color: #fff; }\n  .card h3 {\n    font-family: arial;\n    font-size: 30px;\n    padding: 15px 0; }\n  .card form .form-group > div {\n    width: 100%; }\n    .card form .form-group > div input[type=\"text\"], .card form .form-group > div input[type=\"password\"] {\n      width: 60%;\n      margin: 0 auto;\n      border: none; }\n  .card form .form-group .col-sm-offset-4 {\n    margin: 0; }\n  .card form button {\n    width: 50%;\n    margin: 0 auto;\n    display: block;\n    background: #F2822F;\n    color: #fff; }\n    .card form button:hover {\n      background: #e0670e; }\n  .card form a {\n    float: none !important;\n    text-align: center;\n    display: block;\n    margin-top: 20px;\n    color: #fff; }\n  .card form label {\n    display: none; }\n\n.intro-text {\n  border-bottom: #fff solid 2px;\n  padding-bottom: 15px;\n  max-width: 500px;\n  margin: 20px auto;\n  color: #fff;\n  font-size: 11px; }\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 122 */
+/* 119 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "3459721de9601dc6399b1169fe82b5c3.jpg";
 
 /***/ },
-/* 123 */
+/* 120 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -56955,7 +56894,7 @@
 
 	exports['default'] = function (ngModule) {
 
-	    __webpack_require__(124);
+	    __webpack_require__(121);
 
 	    ngModule.controller('UploadController', [function () {
 
@@ -56966,13 +56905,13 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 124 */
+/* 121 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(125);
+	var content = __webpack_require__(122);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(74)(content, {});
@@ -56992,7 +56931,7 @@
 	}
 
 /***/ },
-/* 125 */
+/* 122 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(73)();
@@ -57006,7 +56945,7 @@
 
 
 /***/ },
-/* 126 */
+/* 123 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -57031,17 +56970,17 @@
 
 	  ngModule.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
 
-	    // var home = {
-	    //   name: 'home',
-	    //   url: '/',
-	    //   templateUrl: '../components/home/home.html',
-	    //   controller:'HomeController'
-	    //
-	    // }
+	    var home = {
+	      name: 'home',
+	      url: '/',
+	      templateUrl: '../components/home/home.html',
+	      controller: 'HomeController'
+
+	    };
 
 	    var login = {
 	      name: 'login',
-	      url: '/',
+	      url: '/login',
 	      templateUrl: '../components/login/login.html',
 	      controller: 'LoginController'
 	    };
@@ -57052,20 +56991,26 @@
 	      template: '<div sp-registration-form post-login-state="main"></div>'
 	    };
 
-	    var upload = {
-	      name: 'upload',
-	      url: '/upload',
-	      templateUrl: '../components/upload/upload.html',
-	      controller: 'UploadController',
-	      controllerAs: 'model'
-	    };
-
 	    var cases = {
 	      name: 'cases',
 	      url: '/cases',
 	      templateUrl: '../components/caseList/caseList.html',
 	      controller: 'cases',
-	      controllerAs: 'model'
+	      controllerAs: 'model',
+	      sp: {
+	        authenticate: true
+	      }
+	    };
+
+	    var cases2 = {
+	      name: 'cases2',
+	      url: '/cases/',
+	      templateUrl: '../components/caseList/caseList.html',
+	      controller: 'cases',
+	      controllerAs: 'model',
+	      sp: {
+	        authenticate: true
+	      }
 	    };
 
 	    var detail = {
@@ -57073,7 +57018,10 @@
 	      url: '/cases/:id',
 	      templateUrl: '../components/caseDetails/caseDetails.html',
 	      controller: 'details',
-	      controllerAs: 'model'
+	      controllerAs: 'model',
+	      sp: {
+	        authenticate: true
+	      }
 	    };
 
 	    // var register = {
@@ -57083,12 +57031,13 @@
 	    //   controller:'<h1>register</h1>'
 	    // }
 
-	    // $stateProvider.state(home);
+	    $stateProvider.state(home);
 
 	    $stateProvider.state(login);
 	    $stateProvider.state(register);
-	    $stateProvider.state(upload);
+
 	    $stateProvider.state(cases);
+	    $stateProvider.state(cases2);
 	    $stateProvider.state(detail);
 
 	    // $locationProvider.html5Mode(true);

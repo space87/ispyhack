@@ -7,7 +7,7 @@ import details from './components/caseDetails/caseDetails.js';
     const router = require('angular-new-router');
     const routers = require('angular-ui-router');
     const ngmap = require('ngmap');
-    // var caseList = require('./components/caseList/caseList.js');
+
 
 
 
@@ -18,23 +18,19 @@ import details from './components/caseDetails/caseDetails.js';
         'ngNewRouter', 'ui.router','stormpath', 'stormpath.templates', 'ngMap'
     ]);
 
-
-    ngModule.run(function($stormpath) {
-      $stormpath.uiRouter({
-        loginState: 'home',
-        defaultPostLoginState: 'about'
-      });
-    });
-
     ngModule.controller('cases', caseList)
     ngModule.controller('details', details)
 
 
 
 
+
+
+
+
     require ('./css/app.scss');
 
-    require('./components/nav/nav.js')(ngModule);
+
     require('./components/home/home.js')(ngModule);
     require('./components/login/login.js')(ngModule);
 
@@ -42,6 +38,13 @@ import details from './components/caseDetails/caseDetails.js';
 
 
     require('./routes')(ngModule);
+
+    ngModule.run(function($stormpath) {
+      $stormpath.uiRouter({
+        loginState: 'login',
+        defaultPostLoginState: 'cases'
+      });
+    });
 
 
 })();
