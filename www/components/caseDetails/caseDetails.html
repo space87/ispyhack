@@ -165,7 +165,7 @@
         </div>
         <div class="modal-body">
 
-          <div class="map" map-lazy-load="https://maps.google.com/maps/api/js">
+          <div class="map" map-lazy-load="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDwUc2RJaUiuDuF3sEiewaWQDFE0CSB6Y&callback=initMap">
             <ng-map center="{{model.tempSighting.lat}},{{model.tempSighting.long}}" zoom="18">
               <marker position="{{model.tempSighting.lat}},{{model.tempSighting.long}}" title="Sighting"></marker>
             </ng-map>
