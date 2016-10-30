@@ -15,5 +15,31 @@
 
 
 body {
-  background:#ccc;
+  background:#fff;
+}
+
+.btn {
+  padding:10px 15px;
+  font-size:14px;
+  text-transform: uppercase;
+  border-radius:0;
+
+  &--orange {
+    background:#f2822f;
+    color:#fff;
+
+    &:hover {
+      background:darken(#f2822f, 10%);
+      color:#fff;
+    }
+  }
+}
+
+.siteHeader {
+  background:url('../img/bg.jpg') no-repeat;
+  background-size: cover;
+  background-position: left center;
+  height:120px;
+  width:100%;
+  position: relative;
 }

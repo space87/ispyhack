@@ -1,14 +1,194 @@
-<div class="container">
+  <section class="siteHeader">
 
-  <div class="row">
+    <div class="container">
 
-<div class="col-sm-12">
+      <div class="row">
 
-{{model.title}}
+        <img src="img/logo.png" class="logo" alt="iSpy">
 
-</div>
+      </div>
+
+    </div>
 
 
-  </div>
+  </section>
 
-</div>
+
+
+
+       <section class="dataTable">
+
+         <div class="container">
+
+           <div class="row">
+
+                <div class="col-sm-12">
+
+                  <h3 class="text-center">Missing People</h3>
+                  <!-- <a href="#">FILTER</a> -->
+                  <div ng-click="model.openModal()" class="btn btn--orange">CREATE NEW CASE</div>
+
+                </div>
+
+
+
+            </div>
+
+            <div class="row">
+
+              <div class="col-sm-12">
+
+                <table class="table">
+                  <thead class="thead-inverse">
+                    <tr>
+                      <td>Surname</td>
+                      <td>Forename</td>
+                      <td>Gender</td>
+                      <td>Birth Year</td>
+                      <td>Status</td>
+                      <td>Category</td>
+                      <td>Accomodation</td>
+                      <td>Borough</td>
+                      <td>Area</td>
+                      <td>X-Cord</td>
+                      <td>Y-Cord</td>
+                      <td>Date Missing</td>
+                      <td>Record Created</td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="case in model.cases">
+                      <td>{{case.surname}}</td>
+                      <td>{{case.forename}}</td>
+                      <td>{{case.gender}}</td>
+                      <td>{{case.birthYear | date : 'longDate'}}</td>
+                      <td>{{case.status}}</td>
+                      <td>{{case.category}}</td>
+                      <td>{{case.accomodation}}</td>
+                      <td>{{case.borough}}</td>
+                      <td>{{case.area}}</td>
+                      <td>{{case.xCord}}</td>
+                      <td>{{case.yCord}}</td>
+                      <td>{{case.dateMissing | date : 'longDate'}}</td>
+                      <td>{{case.recordCreated | date : 'longDate'}}</td>
+
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+
+        </div>
+
+
+      </section>
+
+      <div class="modal" >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Create a Case</h4>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="referanceNumber">Referance</label>
+                  <input type="text" class="form-control" id="referanceNumber" aria-describedby="referance" ng-model="model.caseInfo.referance" placeholder="Enter referance number">
+                </div>
+                <div class="form-group">
+                  <label for="firstname">First name</label>
+                  <input type="text" class="form-control" id="firstname" aria-describedby="firstname" ng-model="model.caseInfo.forename" placeholder="Enter first name">
+                </div>
+
+                <div class="form-group">
+                  <label for="firstname">Last name</label>
+                  <input type="text" class="form-control" id="firstname" aria-describedby="lastname" ng-model="model.caseInfo.surname" placeholder="Enter surname name">
+                </div>
+
+                <fieldset class="form-group">
+                  <legend>Gender</legend>
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="radio" class="form-check-input" name="gender" id="genderMale" ng-model="model.caseInfo.gender" value="male">
+                      Male
+                    </label>
+                  </div>
+                  <div class="form-check">
+                  <label class="form-check-label">
+                      <input type="radio" class="form-check-input" name="gender" id="genderFemale" ng-model="model.caseInfo.gender" value="female">
+                      Female
+                    </label>
+                  </div>
+
+                </fieldset>
+
+                <div class="form-group">
+                  <label for="dob"> Date of Birth</label>
+                  <input type="date" class="form-control" id="dob" aria-describedby="dob" ng-model="model.caseInfo.dob" placeholder="Enter Date of Birth">
+                </div>
+
+                <div class="form-group">
+                  <label for="status">Status</label>
+                  <select class="form-control" id="status" ng-model="model.caseInfo.status">
+                    <option value="missing">Missing</option>
+                    <option value="returned">Returned</option>
+                    <option value="dormont">Dormont</option>
+                    <option value="unconfirmed">Unconfirmed</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="category">Category</label>
+                  <select class="form-control" id="category" ng-model="model.caseInfo.category">
+                    <option value="missing">Missing</option>
+                    <option value="abjuction">Abjuction</option>
+                    <option value="ilegal">Ilegal</option>
+                    <option value="runaway">Run away</option>
+                    <option value="sucidle">Sucidle</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="accomodation">Accomodation</label>
+                  <select  class="form-control" id="accomodation" ng-model="model.caseInfo.accomodation">
+                    <option value="child">Child care</option>
+                    <option value="elder">Elder care</option>
+                    <option value="home">Home address</option>
+                    <option value="medical">Medical / hospital</option>
+                    <option value="crazy">Crazy arse</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="borough"> Borough</label>
+                  <input type="text" class="form-control" id="borough" aria-describedby="borough" ng-model="model.caseInfo.borough" placeholder="Enter borough">
+                </div>
+
+                <div class="form-group">
+                  <label for="area"> Area</label>
+                  <input type="text" class="form-control" id="area" aria-describedby="area" ng-model="model.caseInfo.area" placeholder="Enter Area">
+                </div>
+
+                <div class="form-group">
+                  <label for="dateMissing"> Date Missing</label>
+                  <input type="date" class="form-control" id="dateMissing" aria-describedby="dateMissing" ng-model="model.model.caseInfo.dateMissing">
+                </div>
+
+
+
+
+
+
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" ng-click="model.closeModal()">Close</button>
+              <button type="button" class="btn btn-primary" ng-click="model.createCase(model.caseInfo)">Create Case</button>
+
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->

@@ -1,0 +1,88 @@
+.personDetails {
+
+  h2 {
+    text-align: center;
+    font-size:16px;
+    font-weight: bold;
+    margin-bottom:30px;
+  }
+
+  .miniInfo {
+    list-style: none;
+
+    li {
+      font-size:13px;
+      display:inline-block;
+      margin-bottom:20px;
+      width: 33.333%;
+vertical-align: top;
+
+      .title {
+        font-weight: bold;
+        text-transform: capitalize;
+      }
+    }
+  }
+
+  .box {
+    background:#e3ddd9;
+    padding:20px 15px;
+  }
+
+  .box2 {
+    background:#e3ddd9;
+
+
+    ul {
+      list-style: none;
+      padding:0;
+      margin:0;
+
+      li {
+        display:block;
+
+        .map {
+          height:200px;
+        }
+      }
+    }
+  }
+
+}
+
+.timeSpotted{
+  font-size:18px;
+  line-height: 1.4;
+  margin:10px 0;
+}
+
+.modal {
+  display:block!important;
+  transform: translate3d(0,-200%,0);
+  transition: all .5s ease;
+}
+
+
+
+.alert-success {
+  display:none;
+}
+
+.liveSightings {
+
+  li {
+    &:nth-child(odd){
+      background:#ccc;
+    }
+  }
+
+  h4 {
+    display: inline-block;
+    padding:20px;
+  }
+  button {
+    display:inline-block;
+    margin:20px 20px 15px 0px;
+    float:right;
+  }
+}
