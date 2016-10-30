@@ -32,7 +32,7 @@ export default class cases {
 
     this.http = $http;
 
-    $http.get('http://https://sheltered-headland-81365.herokuapp.com/api/cases')
+    $http.get('https://sheltered-headland-81365.herokuapp.com/api/cases')
     .then(function(res) {
       console.log(res)
       res.data.map(function(item) {
@@ -73,7 +73,7 @@ export default class cases {
         "added": null
       }
 
-      $http.post('http://https://sheltered-headland-81365.herokuapp.com/api/cases', data)
+      $http.post('https://sheltered-headland-81365.herokuapp.com/api/cases', data)
       .then(function(res) {
         console.log(res)
         if(res.status < 400) {

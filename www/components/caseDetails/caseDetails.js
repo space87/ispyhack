@@ -37,7 +37,7 @@ export default class caseDetails {
       confidence:null
     }
 
-    $http.get('http://https://sheltered-headland-81365.herokuapp.com/api/cases/' + $stateParams.id)
+    $http.get('https://sheltered-headland-81365.herokuapp.com/api/cases/' + $stateParams.id)
     .then(function(res) {
       console.log(res)
       self.detail = res.data;
@@ -64,6 +64,12 @@ export default class caseDetails {
 
     this.openPhotoModal = function() {
       document.querySelector('.photoModal').style.transform = 'translate3d(0,50%,0)';
+      document.querySelector('.photoModal').style.display = 'block';
+    }
+
+    this.closePhotoModal = function() {
+      document.querySelector('.photoModal').style.transform = 'translate3d(0,-300%,0)';
+      document.querySelector('.photoModal').style.display = 'none';
     }
 
 
@@ -92,7 +98,7 @@ export default class caseDetails {
 
 
 
-      $http.post('http://https://sheltered-headland-81365.herokuapp.com/api/textFamily', {
+      $http.post('https://sheltered-headland-81365.herokuapp.com/api/textFamily', {
         forename: self.detail.forename,
         surname: self.detail.surname,
         mobileNumber: self.detail.reporteeMobileNumber

@@ -57,8 +57,8 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr ng-repeat="case in model.cases">
-                      <td>{{case.surname}}</td>
+                    <tr ng-repeat="case in model.cases" >
+                      <td><a href="/#/cases/{{case._id}}">{{case.surname}}</a></td>
                       <td>{{case.forename}}</td>
                       <td>{{case.gender}}</td>
                       <td>{{case.birthYear | date : 'longDate'}}</td>
@@ -85,7 +85,7 @@
 
       </section>
 
-      <div class="modal" >
+      <div class="modal createCase" >
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">

@@ -204,7 +204,7 @@
 
 	  this.http = $http;
 
-	  $http.get('http://https://sheltered-headland-81365.herokuapp.com/api/cases').then(function (res) {
+	  $http.get('https://sheltered-headland-81365.herokuapp.com/api/cases').then(function (res) {
 	    console.log(res);
 	    res.data.map(function (item) {
 	      self.cases.push(item);
@@ -243,7 +243,7 @@
 	      "added": null
 	    };
 
-	    $http.post('http://https://sheltered-headland-81365.herokuapp.com/api/cases', data).then(function (res) {
+	    $http.post('https://sheltered-headland-81365.herokuapp.com/api/cases', data).then(function (res) {
 	      console.log(res);
 	      if (res.status < 400) {
 	        self.closeModal();
@@ -630,7 +630,7 @@
 	    confidence: null
 	  };
 
-	  $http.get('http://https://sheltered-headland-81365.herokuapp.com/api/cases/' + $stateParams.id).then(function (res) {
+	  $http.get('https://sheltered-headland-81365.herokuapp.com/api/cases/' + $stateParams.id).then(function (res) {
 	    console.log(res);
 	    self.detail = res.data;
 	  })['catch'](function (err) {
@@ -655,6 +655,12 @@
 
 	  this.openPhotoModal = function () {
 	    document.querySelector('.photoModal').style.transform = 'translate3d(0,50%,0)';
+	    document.querySelector('.photoModal').style.display = 'block';
+	  };
+
+	  this.closePhotoModal = function () {
+	    document.querySelector('.photoModal').style.transform = 'translate3d(0,-300%,0)';
+	    document.querySelector('.photoModal').style.display = 'none';
 	  };
 
 	  this.viewSighting = function (number) {
@@ -673,7 +679,7 @@
 
 	  this.approve = function () {
 
-	    $http.post('http://https://sheltered-headland-81365.herokuapp.com/api/textFamily', {
+	    $http.post('https://sheltered-headland-81365.herokuapp.com/api/textFamily', {
 	      forename: self.detail.forename,
 	      surname: self.detail.surname,
 	      mobileNumber: self.detail.reporteeMobileNumber
@@ -751,7 +757,7 @@
 
 
 	// module
-	exports.push([module.id, ".personDetails h2 {\n  text-align: center;\n  font-size: 16px;\n  font-weight: bold;\n  margin-bottom: 30px; }\n\n.personDetails .miniInfo {\n  list-style: none; }\n  .personDetails .miniInfo li {\n    font-size: 13px;\n    display: inline-block;\n    margin-bottom: 20px;\n    width: 33.333%;\n    vertical-align: top; }\n    .personDetails .miniInfo li .title {\n      font-weight: bold;\n      text-transform: capitalize; }\n\n.personDetails .box {\n  background: #e3ddd9;\n  padding: 20px 15px; }\n\n.personDetails .box2 {\n  background: #e3ddd9; }\n  .personDetails .box2 ul {\n    list-style: none;\n    padding: 0;\n    margin: 0; }\n    .personDetails .box2 ul li {\n      display: block; }\n      .personDetails .box2 ul li .map {\n        height: 200px; }\n\n.timeSpotted {\n  font-size: 18px;\n  line-height: 1.4;\n  margin: 10px 0; }\n\n.modal {\n  display: block !important;\n  transform: translate3d(0, -200%, 0);\n  transition: all .5s ease; }\n\n.alert-success {\n  display: none; }\n\n.liveSightings li:nth-child(odd) {\n  background: #ccc; }\n\n.liveSightings h4 {\n  display: inline-block;\n  padding: 20px; }\n\n.liveSightings button {\n  display: inline-block;\n  margin: 20px 20px 15px 0px;\n  float: right; }\n", ""]);
+	exports.push([module.id, ".personDetails h2 {\n  text-align: center;\n  font-size: 16px;\n  font-weight: bold;\n  margin-bottom: 30px; }\n\n.personDetails .miniInfo {\n  list-style: none; }\n  .personDetails .miniInfo li {\n    font-size: 13px;\n    display: inline-block;\n    margin-bottom: 20px;\n    width: 33.333%;\n    vertical-align: top; }\n    .personDetails .miniInfo li .title {\n      font-weight: bold;\n      text-transform: capitalize; }\n\n.personDetails .box {\n  background: #e3ddd9;\n  padding: 20px 15px; }\n\n.personDetails .box2 {\n  background: #e3ddd9; }\n  .personDetails .box2 ul {\n    list-style: none;\n    padding: 0;\n    margin: 0; }\n    .personDetails .box2 ul li {\n      display: block; }\n      .personDetails .box2 ul li .map {\n        height: 200px; }\n\n.timeSpotted {\n  font-size: 18px;\n  line-height: 1.4;\n  margin: 10px 0; }\n\n.sightingModal {\n  display: block !important;\n  transform: translate3d(0, -200%, 0);\n  transition: all .5s ease; }\n\n.photoModal {\n  transform: translate3d(0, -200%, 0);\n  transition: all .5s ease; }\n\n.alert-success {\n  display: none; }\n\n.liveSightings li:nth-child(odd) {\n  background: #ccc; }\n\n.liveSightings h4 {\n  display: inline-block;\n  padding: 20px; }\n\n.liveSightings button {\n  display: inline-block;\n  margin: 20px 20px 15px 0px;\n  float: right; }\n", ""]);
 
 	// exports
 

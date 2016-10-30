@@ -56,8 +56,14 @@ vertical-align: top;
   margin:10px 0;
 }
 
-.modal {
+.sightingModal {
   display:block!important;
+  transform: translate3d(0,-200%,0);
+  transition: all .5s ease;
+}
+
+.photoModal {
+
   transform: translate3d(0,-200%,0);
   transition: all .5s ease;
 }
