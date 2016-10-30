@@ -37,7 +37,7 @@ export default class caseDetails {
       confidence:null
     }
 
-    $http.get('http://localhost:8080/api/cases/' + $stateParams.id)
+    $http.get('http://https://sheltered-headland-81365.herokuapp.com/api/cases/' + $stateParams.id)
     .then(function(res) {
       console.log(res)
       self.detail = res.data;
@@ -92,7 +92,7 @@ export default class caseDetails {
 
 
 
-      $http.post('http://localhost:8080/api/textFamily', {
+      $http.post('http://https://sheltered-headland-81365.herokuapp.com/api/textFamily', {
         forename: self.detail.forename,
         surname: self.detail.surname,
         mobileNumber: self.detail.reporteeMobileNumber
@@ -127,7 +127,7 @@ export default class caseDetails {
     //Take the first selected file
     fd.append("file", files[0]);
 
-    $http.post('localhost:8080/api/cases/581575b4e123d111470f830a/images', fd, {
+    $http.post('https://sheltered-headland-81365.herokuapp.com/api/cases/581575b4e123d111470f830a/images', fd, {
         withCredentials: true,
         // headers: {'Content-Type': '' },
         transformRequest: angular.identity
@@ -137,7 +137,7 @@ export default class caseDetails {
 
     this.uploadPhoto = function() {
 
-      $http.post('localhost:8080/api/cases/5814baf0b6b7ae1cbc1b4aab/images', data)
+      $http.post('https://sheltered-headland-81365.herokuapp.com/api/cases/5814baf0b6b7ae1cbc1b4aab/images', data)
       .then(function(res) {
 
       })
