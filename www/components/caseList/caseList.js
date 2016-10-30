@@ -62,6 +62,7 @@ export default class cases {
         "gender": form.gender,
         "birthYear": new Date(form.dob).getTime(),
         "status":form.status,
+        "reporteeMobileNumber": form.phone,
         "category": form.category,
         "accomodation":form.accomodation,
         "borough":form.borough,
